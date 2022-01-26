@@ -6,7 +6,8 @@ node_js:
 install:
   - npm install
 script:
-  - npm run test
+    - gem install dpl && gem install faraday -v 1.8.0
+    - dpl --provider=heroku --app=xxx --api-key=9d0c58ba-fd14-4df3-9592-e315928e1265
 branches:
   only:
     - master
