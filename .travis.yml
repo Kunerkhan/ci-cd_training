@@ -3,7 +3,18 @@ sudo: false
 language: node_js
 node_js:
   - 14.18.1
-
+install:
+  - npm install
+script:
+  - npm run test
 branches:
   only:
     - master
+deploy:
+  provider: heroku
+  app:
+    master: example-ci-cd-22
+    dev: example-ci-cd-22
+  api_key:
+    secure: "9d0c58ba-fd14-4df3-9592-e315928e1265"
+
